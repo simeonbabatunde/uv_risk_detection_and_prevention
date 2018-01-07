@@ -1,0 +1,102 @@
+TEAM UV
+- Kristopher Kohm
+- Benjamin Coomes
+- Simeon Babatunde
+- Miriam Lozneanu
+
+
+TESTING INSTRUCTIONS
+
+Test locations
+	Unit tests are in team-uv/software/unit_tests.
+	Integration tests are in team-uv/software/integration_tests
+
+Unit Tests
+	display_unit_test: Tests the state machine for the display device.
+		Purpose: Verify that the display state machine functions correctly.
+		HW requirements: 1 MSP430
+		
+		Open display_unit_test.ino file in energia and run it.
+		No configuration required. 
+		Test results are printed on command line.
+
+	sensor_state_test: Tests the state machine for the sensor device.
+		Purpose: Verify that the sensor state machine functions correctly.
+		HW requirements: 1 MSP430
+		
+		Open the sensor_state_test.ino file in energia and run it. 
+		No configuration required. 
+		Test results are printed on command line.
+
+	ledbar_test: Tests the interface to the LED bar.
+		Purpose: Verify that the led hardware can be controlled by the LedBar class.
+		HW requirements: 1 MSP430
+		
+		Open the ledbar_test.ino file in energia.
+		Connect the pins on your MSP430 as described in the file.
+		This will test that the input pins are correctly set when
+		controlled through the LED interface.
+		Upload the file. Test results are printed on command line.
+
+
+
+	uv_tranmit_2 and uv_receive_test
+		Purpose: Verify that UV data can be transmitted and recieved accurately. 
+		HW requirements: 2 MSP430 boards and 2 cc1101 radios.
+		
+		Open the uv_transmit_2.ino file in energia.
+		Wire the one cc1101 radio to one board, as described in the cc1101 repo.
+		Upload the file. See uv_receive_test for results.
+
+		Open the uv_receive_test.ino file in energia.
+		Wire the other cc1101 radio to the other board, as described in the cc1101 repo.
+		Upload the file. Test results are printed on the command line.
+
+
+	uv_sensor_test
+		Purpose: Verify that the sensor transmits reasonable UV values.
+		HW requirements: 1 MSP430 board and 1 ZOPT2201 UV sensor
+
+		Open the uv_sensor_test.ino file.
+		Wire the sensor as described at the top of the file.
+
+
+Integration Tests
+	radio_lights: Tests the LED interface, hardware, and radio communication together.
+		HW requirements: 2 MSP430 boards, 2 CC1101 radios, and 10 LEDs
+
+		Open the radio_lights/display/display.ino file in energia.
+		Wire each LED to the pin it is '#-defined' as. 
+		Arrange the LEDs in sequential order to make viewing test results easy.
+		Wire the CC1101 as described in the CC1101 repo.
+		Upload the file. 
+		Lights on LEDs should turn on in the pattern defined in sensor.ino.
+
+		Open the radio_lights/sensor/sensor.ino file in energia.
+		Wire the CC1101 as described in the CC1101 repo.
+		Upload the file. 
+		See the pseudoGetUVIndex() function to see what values are transmitted.
+
+
+	uv_radio_lights: Test the entire system.
+		HW requirements: 2 MSP430 boards, 2 CC1101 radios, and 1 ZOPT2201 UV Sensor
+
+		Open the uv_radio_lights/display/display.ino file in energia.
+		Wire the CC1101 as described in the CC1101 repo.
+		Upload the file. 
+		Values from the UV sensor should be displayed in the serial console.
+
+		Open the uv_radio_lights/sensor/sensor.ino file in energia.
+		Wire the ZOPT2201 as described in the uv_radio_lights/uv_radio_
+		Wire the CC1101 as described in the CC1101 repo.
+		Upload the file. 
+
+
+Problems: 
+
+	We cannot get the radio code to work inside of a C++ class. For this reason, we
+	are unable to create classes to simplfy the radio interface or to use our state 
+	machines. 
+
+
+	
