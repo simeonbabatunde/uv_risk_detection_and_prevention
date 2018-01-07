@@ -2,17 +2,11 @@
 
 #### Team UV
 - Kristopher Kohm
-- Benjamin Coomes
 - Simeon Babatunde
+- Benjamin Coomes
 - Miriam Lozneanu
 
-Repository: buffet@buffet.cs.clemson.edu:sbabatu/team_uv
+#### System Description
+The UV risk detection and alert system is a set of wearable devices that inform the user about UV exposure rate. One device senses UV radiation and the other displays the UV radiation levels. The display device shows the current and average UV index. The display is in the form of two LED bars that ‘fill up’ as exposure increases, and ‘empty’ as exposure decreases. The sensor device can be clipped onto a hat or backpack. The display device is worn on the user’s wrist. The system lets people know when they have experienced a healthy amount of radiation and when their exposure is approaching dangerous levels.
 
 October 3, 2017
-
-Delivery #3
-
-#### Delivery description
-We try to find minimum and maximum voltages as well as current draw for the parts. This helped us choose a voltage regulator and battery. We created schematics for the custom hardware in our project using Eagle. We will have a custom board for the sensor device and the display device.
-
-We successfully created our git repo for accessing and updating our files. 
